@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 2021_02_04_013219) do
 
   create_table "cleanups", force: :cascade do |t|
     t.string "name"
-    t.string "location"
     t.string "category"
+    t.string "image"
     t.date "date"
-    t.time "start_time"
-    t.time "end_time"
+    t.integer "duration"
     t.text "comment"
+    t.integer "cheer"
     t.bigint "user_id", null: false
     t.bigint "location_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -42,14 +42,15 @@ ActiveRecord::Schema.define(version: 2021_02_04_013219) do
 
   create_table "users", force: :cascade do |t|
     t.string "avatar"
-    t.string "user_name"
+    t.string "username"
     t.string "password"
+    t.integer "age"
     t.string "catchphrase"
-    t.boolean "badge1"
-    t.boolean "badge2"
-    t.boolean "badge3"
-    t.boolean "badge4"
-    t.boolean "badge5"
+    t.integer "park_badge"
+    t.integer "playground_badge"
+    t.integer "shoreline_badge"
+    t.integer "trail_badge"
+    t.integer "general_badge"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
