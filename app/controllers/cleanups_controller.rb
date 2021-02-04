@@ -1,0 +1,2 @@
+class CleanupsController < ApplicationController
+end
