@@ -23,32 +23,34 @@
 
 # badge types: park, playground, shoreline, trail, general
 
-Cleanup.destroy_all
+User.destroy_all
 Location.destroy_all
+Cleanup.destroy_all
+
 
 users = User.create!([
     {
-        avatar: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.greatoutdoorshop.com%2Fshop%2Fwoodsy-owl-sticker%2F&psig=AOvVaw1JyQEFwplI4QGCvBSiVCJV&ust=1612539009485000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjx2IjG0O4CFQAAAAAdAAAAABAF"
+        avatar: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.greatoutdoorshop.com%2Fshop%2Fwoodsy-owl-sticker%2F&psig=AOvVaw1JyQEFwplI4QGCvBSiVCJV&ust=1612539009485000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjx2IjG0O4CFQAAAAAdAAAAABAF",
         username: "Woodsy Owl",
         password: "1234",
         age: 50,
         catchphrase: "Give a hoot, don't pollute!",
-        park_badge: 4
-        playground_badge: 2
-        shoreline_badge: 10
-        badge_trail: 6
-        badge_general: 12
+        park_badge: 4,
+        playground_badge: 2,
+        shoreline_badge: 10,
+        trail_badge: 6,
+        general_badge: 12
     },
     {
-        avatar: "http://media.al.com/montgomery-commentary/photo/9385840-large.jpg"
+        avatar: "http://media.al.com/montgomery-commentary/photo/9385840-large.jpg",
         username: "litterbuster",
         password: "1234",
         age: 15,
         catchphrase: "Don't be a litterbug!",
-        park_badge: 10
-        playground_badge: 0
-        shoreline_badge: 1
-        trail_badge: 3
+        park_badge: 10,
+        playground_badge: 0,
+        shoreline_badge: 1,
+        trail_badge: 3,
         general_badge: 8
     }
 ]) 
@@ -77,7 +79,7 @@ locations = Location.create!([
     },
     {
         name: 'Prospect Park - East Drive Entrance',
-        category: 'picnic',
+        category: 'park',
         latitude: 40.655090,
         longitude: -73.963229
     },
@@ -104,8 +106,7 @@ locations = Location.create!([
         category: 'general',
         latitude: 40.674796, 
         longitude: -73.943672
-    },
-
+    }
 ])
 
 # create_table "cleanups", force: :cascade do |t|
@@ -132,7 +133,7 @@ cleanups = Cleanup.create!([
         date: "2021-1-20",
         duration: 1.5,
         comment: "Pick up after your dogs!",
-        cheer: 4
+        cheer: 4,
         user_id: 1,
         location_id: 1
     },
@@ -148,9 +149,9 @@ cleanups = Cleanup.create!([
         location_id: 2
     },
     {
-        location_name: 'Prospect Park - East Drive Entrance',
+        name: 'Prospect Park - East Drive Entrance',
         category: 'picnic',
-        image: "https://media.timeout.com/images/103877051/image.jpg"
+        image: "https://media.timeout.com/images/103877051/image.jpg",
         date: "2020-12-23",
         duration: 1.5,
         comment: "The amount of plastic party confetti here is astounding.",
@@ -159,20 +160,20 @@ cleanups = Cleanup.create!([
         location_id: 3
     },
     {
-        location_name: 'Prospect Park - Vanderbilt Playground',
+        name: 'Prospect Park - Vanderbilt Playground',
         category: 'playground',
-        image: "https://media.timeout.com/images/103877051/image.jpg"
+        image: "https://media.timeout.com/images/103877051/image.jpg",
         date: "2021-1-05",
         duration: 1.5,
-        comment: "Looks like the preteens had a field day here last night.",
+        comment: "Looks like the pre-teens had a field day here last night.",
         cheer: 0,
         user_id: 1,
         location_id: 4
     },
     {
-        location_name: 'Prospect Park - paved trail',
+        name: 'Prospect Park - paved trail',
         category: 'trail',
-        image: "https://media.timeout.com/images/103877051/image.jpg"
+        image: "https://media.timeout.com/images/103877051/image.jpg",
         date: "2020-11-06",
         duration: 1.5,
         comment: "Lots of broken glass!",
