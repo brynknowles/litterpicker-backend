@@ -1,3 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :avatar, :user_name, :password, :catchphrase, :badge1, :badge2, :badge3, :badge4, :badge5
+  attributes :id, :avatar, :username, :password, :age, :catchphrase, :park_badge, :playground_badge, :shoreline_badge, :trail_badge, :general_badge
+  has_many :cleanups
 end
