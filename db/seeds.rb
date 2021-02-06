@@ -129,7 +129,7 @@ cleanups = Cleanup.create!([
     {
         name: 'The Peninsula',
         category: 'shoreline',
-        image: "https://media.timeout.com/images/103877051/image.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Prospect_Park_New_York_October_2015_003.jpg",
         date: "2021-1-20",
         duration: 1.5,
         comment: "Pick up after your dogs!",
@@ -140,7 +140,7 @@ cleanups = Cleanup.create!([
     {
         name: 'Nethermead',
         category: 'park',
-        image: "https://media.timeout.com/images/103877051/image.jpg",
+        image: "https://onthegrid.city/imager/s3_amazonaws_com/onthegrid.city/assets/grid/brooklyn/prospect-lefferts-gardens/nethermead/Nethermead_4_299006722e285f47655d17d1c9136337.jpg",
         date: "2020-08-22",
         duration: 1.5,
         comment: "There was so much trash here from a birthday party. Please clean up after yourselves, folks!",
@@ -151,7 +151,7 @@ cleanups = Cleanup.create!([
     {
         name: 'East Drive Entrance',
         category: 'picnic',
-        image: "https://media.timeout.com/images/103877051/image.jpg",
+        image: "https://i1.wp.com/www.bkreader.com/wp-content/uploads/2017/07/carfreeprospectpark_18053668.jpg?fit=640%2C360&ssl=1",
         date: "2020-12-23",
         duration: 1.5,
         comment: "The amount of plastic party confetti here is astounding.",
@@ -162,7 +162,7 @@ cleanups = Cleanup.create!([
     {
         name: 'Vanderbilt Playground',
         category: 'playground',
-        image: "https://media.timeout.com/images/103877051/image.jpg",
+        image: "https://media.timeout.com/images/102743002/630/472/image.jpg",
         date: "2021-1-05",
         duration: 1.5,
         comment: "Looks like the pre-teens had a field day here last night.",
@@ -173,7 +173,7 @@ cleanups = Cleanup.create!([
     {
         name: 'Paved trail',
         category: 'trail',
-        image: "https://media.timeout.com/images/103877051/image.jpg",
+        image: "https://cdn-img-feed.streeteasy.com/nyc/image/24/408139724.jpg",
         date: "2020-11-06",
         duration: 1.5,
         comment: "Lots of broken glass!",
