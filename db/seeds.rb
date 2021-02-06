@@ -66,43 +66,43 @@ users = User.create!([
 
 locations = Location.create!([
     {
-        name: 'Prospect Park - The Peninsula',
+        name: 'Prospect Park',
         category: 'shoreline',
         latitude: 40.656778,
         longitude: -73.967944
     },
     {
-        name: 'Prospect Park - Nethermead',
+        name: 'Prospect Park',
         category: 'park',
         latitude: 40.661043,
         longitude: -73.968406
     },
     {
-        name: 'Prospect Park - East Drive Entrance',
+        name: 'Prospect Park',
         category: 'park',
         latitude: 40.655090,
         longitude: -73.963229
     },
     {
-        name: 'Prospect Park - Vanderbilt Playground',
+        name: 'Prospect Park',
         category: 'playground',
         latitude: 40.655316,
         longitude: -73.973061
     },
     {
-        name: 'Prospect Park - paved trail',
+        name: 'Prospect Park',
         category: 'trail',
         latitude: 40.656626,
         longitude: -73.973383
     },
     {
-        name: "Coney Island Beach",
+        name: "Coney Island",
         category: 'shoreline',
         latitude: 40.573801, 
         longitude: -73.969725
     },
     {
-        name: "Brooklyn Children's Museum sidewalks",
+        name: "Brooklyn Children's Museum",
         category: 'general',
         latitude: 40.674796, 
         longitude: -73.943672
@@ -127,7 +127,7 @@ locations = Location.create!([
 
 cleanups = Cleanup.create!([
     {
-        name: 'Prospect Park - The Peninsula',
+        name: 'The Peninsula',
         category: 'shoreline',
         image: "https://media.timeout.com/images/103877051/image.jpg",
         date: "2021-1-20",
@@ -138,7 +138,7 @@ cleanups = Cleanup.create!([
         location_id: 1
     },
     {
-        name: 'Prospect Park - Nethermead',
+        name: 'Nethermead',
         category: 'park',
         image: "https://media.timeout.com/images/103877051/image.jpg",
         date: "2020-08-22",
@@ -149,7 +149,7 @@ cleanups = Cleanup.create!([
         location_id: 2
     },
     {
-        name: 'Prospect Park - East Drive Entrance',
+        name: 'East Drive Entrance',
         category: 'picnic',
         image: "https://media.timeout.com/images/103877051/image.jpg",
         date: "2020-12-23",
@@ -160,7 +160,7 @@ cleanups = Cleanup.create!([
         location_id: 3
     },
     {
-        name: 'Prospect Park - Vanderbilt Playground',
+        name: 'Vanderbilt Playground',
         category: 'playground',
         image: "https://media.timeout.com/images/103877051/image.jpg",
         date: "2021-1-05",
@@ -171,14 +171,14 @@ cleanups = Cleanup.create!([
         location_id: 4
     },
     {
-        name: 'Prospect Park - paved trail',
+        name: 'Paved trail',
         category: 'trail',
         image: "https://media.timeout.com/images/103877051/image.jpg",
         date: "2020-11-06",
         duration: 1.5,
         comment: "Lots of broken glass!",
         cheer: 6,
-        user_id: 1,
+        user_id: 2,
         location_id: 5
     }
 ])
