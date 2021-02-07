@@ -30,7 +30,7 @@ Cleanup.destroy_all
 
 users = User.create!([
     {
-        avatar: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.greatoutdoorshop.com%2Fshop%2Fwoodsy-owl-sticker%2F&psig=AOvVaw1JyQEFwplI4QGCvBSiVCJV&ust=1612539009485000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjx2IjG0O4CFQAAAAAdAAAAABAF",
+        avatar: "https://www.greatoutdoorshop.com/wp-content/uploads/2019/08/WOODSY-OWL-STICKER-1000.jpg",
         username: "Woodsy Owl",
         password: "1234",
         age: 50,
