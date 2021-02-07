@@ -1,5 +1,13 @@
 # README
 
+# LitterPicker 
+  ## is a web based app created using Rails and React Hooks
+
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
