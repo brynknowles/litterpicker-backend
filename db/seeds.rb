@@ -165,7 +165,7 @@ cleanups = Cleanup.create!([
         image: "https://media.timeout.com/images/102743002/630/472/image.jpg",
         date: "2021-1-05",
         duration: 1.5,
-        comment: "Looks like the pre-teens had a field day here last night.",
+        comment: "Looks like the teens had a party here last night.",
         cheer: 0,
         user_id: 1,
         location_id: 4
@@ -180,6 +180,28 @@ cleanups = Cleanup.create!([
         cheer: 6,
         user_id: 2,
         location_id: 5
+    },
+    {
+        name: 'Beach',
+        category: 'shoreline',
+        image: "https://media.timeout.com/images/103329148/image.jpg",
+        date: "2020-08-25",
+        duration: 1.5,
+        comment: "Lots of plastice found here :(",
+        cheer: 30,
+        user_id: 2,
+        location_id: 6
+    },
+    {
+        name: 'Sidewalk',
+        category: 'general',
+        image: "https://assets.simpleviewinc.com/simpleview/image/upload/crm/newyorkstate/brooklynchildrensmuseum_julienneschaer_001_0fdfcb52-f4c0-2cb9-2ac96c765fb0a685.jpg",
+        date: "2020-11-23",
+        duration: 1.5,
+        comment: "Cans, glass and fast food garbage",
+        cheer: 10,
+        user_id: 1,
+        location_id: 7
     }
 ])
 

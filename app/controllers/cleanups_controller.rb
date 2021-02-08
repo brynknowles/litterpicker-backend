@@ -52,7 +52,7 @@ class CleanupsController < ApplicationController
         cleanup = current_user.cleanup.destroy
         if cleanup.valid?
             render json: nil, status: :no_content
-            # should i consider the below code for render instead?
+            # should i consider the below code for render instead or leave off the render?
             # render json: cleanups
         else
             render json: { error: cleanup.errors.full_messages }, status: :unprocessable_entity
