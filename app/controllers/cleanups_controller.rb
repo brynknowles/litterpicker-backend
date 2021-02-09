@@ -1,44 +1,39 @@
 class CleanupsController < ApplicationController
-    
+    # before_action :set_cleanup, only: [:index, :show, :update, :destroy]
+
     # GET /cleanups
     def index 
         cleanups = Cleanup.all 
-        render json: cleanups
+        render json: cleanups, status: 200
     end
 
     # GET /listings/:id
     def show
         cleanup = Cleanup.find_by(id: params[:id])
         if cleanup
-            render json: cleanup
+            render json: cleanup, status: 200
         else
             render json: { error: "Cleanup not found" }, status: :not_found
         end
     end
 
     # POST /cleanups
-    def create 
-        def create
-            # fake auth
-            current_user = User.first
-            
-            cleanup = current_user.cleanups.create(cleanup_params)
-            if cleanup.valid?
-                render json: cleanup
-            else
-                render json: { error: cleanup.errors.full_messages }, status: :unprocessable_entity
-            end
+    def create
+        cleanup = Cleanup.create(cleanup_params)
+        # render json: cleanup, status: 201
+        if cleanup.valid?
+            render json: cleanup, status: 201
+        else 
+            render json: { error: cleanup.errors.full_messages }, status: :unprocessable_entity
         end
     end
 
     # PATCH /cleanups/:id
     def update 
-        # fake auth
-        current_user = User.first
-        
-        cleanup = current_user.cleanups.update(cleanup_params)
-        if cleanup.valid?
-            render json: cleanup
+        @cleanup.update(cleanup_params)
+        # render json: @cleanup, status: 200
+        if @cleanup.valid?
+            render json: @cleanup, status: 200
         else
             render json: { error: cleanup.errors.full_messages }, status: :unprocessable_entity
         end
@@ -46,23 +41,19 @@ class CleanupsController < ApplicationController
 
     # DELETE /cleanups/:id
     def destroy
-        # fake auth
-        current_user = User.first
-        
-        cleanup = current_user.cleanup.destroy
-        if cleanup.valid?
-            render json: nil, status: :no_content
-            # should i consider the below code for render instead or leave off the render?
-            # render json: cleanups
-        else
-            render json: { error: cleanup.errors.full_messages }, status: :unprocessable_entity
-        end
-        
+        @cleanup.id = Cleanup.find_by(id: params[:id])
+        @cleanup.destroy
+        render json: cleanups, status: :no_content
     end
 
     private
 
+    # Cleanup Params
     def cleanup_params
-        params.permit(:name, :location, :category, :image, :date, :duration, :comment, :cheer, :user_id)
+        params.permit(:name, :location, :category, :image, :date, :duration, :comment, :cheer, :users)
     end
+
+    # def set_note
+    #     @note = Note.find(params[:id])
+    # end
 end

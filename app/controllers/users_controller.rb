@@ -1,52 +1,57 @@
 class UsersController < ApplicationController
+    # before_action :set_user, only: [:show,:update,:destroy]
+    
+    # GET /users
     def index 
         users = User.all 
-        render json: users
+        render json: users, status: 200
     end
 
+    # GET /users/:id
     def show
         user = User.find_by(id: params[:id])
         if user
-            render json: user
+            render json: user, status: 200
         else
             render json: { error: "User not found" }, status: :not_found
         end
     end
 
+    # POST /cleanups
     def create 
         user = User.create(user_params)
         if user.valid?
-            render json: user
+            render json: user, status: 201
         else
             render json: { error: user.errors.full_messages }, status: :unprocessable_entity
         end
     end
 
+    # PATCH /cleanups/:id
     def update 
-        user = User.find(params[:id])
-        user.update!(user_params)
-        if user.valid?
-            render json: user
+        @user.update(user_params)
+        if @user.valid?
+            render json: @user, status: 200
         else
             render json: { error: user.errors.full_messages }, status: :unprocessable_entity
         end
     end
 
+    # DELETE /cleanups/:id
     def destroy 
-        current_user = User.first
-        current_user.destroy
-        if current_user.valid?
-            render json: nil, status: :no_content
-        else
-            render json: { error: current_user.errors.full_messages }, status: :unprocessable_entity
-        end
-
+        @user.id = User.find_by(id: params[:id])
+        @user.destroy
+        render json: users, status: :no_content
     end
     
-
     private
 
+    # User Params
     def user_params
-        params.permit(:avatar, :username, :password, :age, :catchphrase, :park_badge, :playground_badge, :shoreline_badge, :trail_badge, :general_badge, :cleanups)
+        params.permit(:avatar, :username, :password, :age, :catchphrase, :park_badge, :playground_badge, :shoreline_badge, :trail_badge, :earth_steward_badge, :cleanups)
     end
+
+    # def set_user
+    #     @user = User.find(params[:id])
+    # end
 end

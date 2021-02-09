@@ -4,12 +4,12 @@ class AuthController < ApplicationController
     #     render json: user
     # end
 
-    def login
-        user=User.find_by(name: params[:name])
-        if(user && user.authenticate(params[:password]))
-            render json: user
-        end
-    end
+    # def login
+    #     user=User.find_by(name: params[:name])
+    #     if(user && user.authenticate(params[:password]))
+    #         render json: user
+    #     end
+    # end
 end
 
 
