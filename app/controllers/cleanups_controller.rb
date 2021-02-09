@@ -63,6 +63,6 @@ class CleanupsController < ApplicationController
     private
 
     def cleanup_params
-        params.permit(:name, :category, :image, :date, :duration, :comment, :cheer, :user, :location)
+        params.permit(:name, :location, :category, :image, :date, :duration, :comment, :cheer, :user_id)
     end
 end

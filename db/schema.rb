@@ -10,51 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_013219) do
+ActiveRecord::Schema.define(version: 2021_02_08_212451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cleanups", force: :cascade do |t|
     t.string "name"
+    t.string "location"
     t.string "category"
     t.string "image"
     t.date "date"
     t.integer "duration"
     t.text "comment"
     t.integer "cheer"
-    t.bigint "user_id", null: false
-    t.bigint "location_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["location_id"], name: "index_cleanups_on_location_id"
-    t.index ["user_id"], name: "index_cleanups_on_user_id"
   end
 
-  create_table "locations", force: :cascade do |t|
-    t.string "name"
-    t.string "category"
-    t.float "latitude"
-    t.float "longitude"
+  create_table "user_cleanups", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "cleanup_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cleanup_id"], name: "index_user_cleanups_on_cleanup_id"
+    t.index ["user_id"], name: "index_user_cleanups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "avatar"
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.integer "age"
     t.string "catchphrase"
     t.integer "park_badge"
     t.integer "playground_badge"
     t.integer "shoreline_badge"
     t.integer "trail_badge"
-    t.integer "general_badge"
+    t.integer "earth_steward_badge"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "cleanups", "locations"
-  add_foreign_key "cleanups", "users"
+  add_foreign_key "user_cleanups", "cleanups"
+  add_foreign_key "user_cleanups", "users"
 end

@@ -1,5 +1,4 @@
 class CleanupSerializer < ActiveModel::Serializer
-  attributes :id, :name, :category, :image, :date, :duration, :comment, :cheer
-  has_one :user
-  has_one :location
+  attributes :id, :name, :location, :category, :image, :date, :duration, :comment, :cheer
+  has_many :users
 end

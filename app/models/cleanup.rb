@@ -1,4 +1,4 @@
 class Cleanup < ApplicationRecord
-  belongs_to :user
-  belongs_to :location
+  has_many :user_cleanups, dependent: :destroy
+  has_many :users, through: :user_cleanups
 end
