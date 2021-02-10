@@ -41,9 +41,9 @@ class CleanupsController < ApplicationController
 
     # DELETE /cleanups/:id
     def destroy
-        @cleanup.id = Cleanup.find_by(id: params[:id])
+        @cleanup = Cleanup.find_by(id: params[:id])
         @cleanup.destroy
-        render json: cleanups, status: :no_content
+        render json: @cleanup, status: :no_content
     end
 
     private

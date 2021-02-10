@@ -6,7 +6,8 @@ class CreateCleanups < ActiveRecord::Migration[6.0]
       t.string :category
       t.string :image
       t.date :date
-      t.integer :duration
+      t.time :start_time
+      t.time :end_time
       t.text :comment
       t.integer :cheer
       t.timestamps

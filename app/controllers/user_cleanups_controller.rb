@@ -10,6 +10,12 @@ class UserCleanupsController < ApplicationController
         render json: user_cleanup, status: 201
     end
 
+    def destroy 
+        @user_cleanup.id = UserCleanup.find_by(id: params[:id])
+        @user_cleanup.destroy
+        render json: user_cleanups, status: :no_content
+    end
+
     private
 
     def user_cleanup_params
