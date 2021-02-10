@@ -6,8 +6,8 @@ class UserCleanupsController < ApplicationController
     end
     
     def create
-        user_cleanup = UserActivity.create(user_cleanup_params)
-        render json: user_activity, status: 201
+        user_cleanup = UserCleanup.create(user_cleanup_params)
+        render json: user_cleanup, status: 201
     end
 
     private
