@@ -50,7 +50,7 @@ class CleanupsController < ApplicationController
 
     # Cleanup Params
     def cleanup_params
-        params.permit(:name, :location, :category, :image, :date, :start_time, :end_time, :comment, :cheer, :users)
+        params.permit(:id, :name, :location, :category, :image, :date, :start_time, :end_time, :comment, :cheer, :users)
     end
 
     # def set_note
