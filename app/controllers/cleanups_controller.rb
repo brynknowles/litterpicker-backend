@@ -30,27 +30,28 @@ class CleanupsController < ApplicationController
 
     # PATCH /cleanups/:id
     def update 
-        @cleanup.update(cleanup_params)
-        # render json: @cleanup, status: 200
-        if @cleanup.valid?
-            render json: @cleanup, status: 200
-        else
-            render json: { error: cleanup.errors.full_messages }, status: :unprocessable_entity
-        end
+        cleanup = Cleanup.find_by(id: params[:id])
+        cleanup.update!(cleanup_params)
+        render json: cleanup, status: 200
+        # if cleanup.valid?
+        #     render json: cleanup, status: 200
+        # else
+        #     render json: { error: cleanup.errors.full_messages }, status: :unprocessable_entity
+        # end
     end
 
     # DELETE /cleanups/:id
     def destroy
-        @cleanup = Cleanup.find_by(id: params[:id])
-        @cleanup.destroy
-        render json: @cleanup, status: :no_content
+        cleanup = Cleanup.find_by(id: params[:id])
+        cleanup.destroy
+        render json: cleanup, status: :no_content
     end
 
     private
 
     # Cleanup Params
     def cleanup_params
-        params.permit(:id, :name, :location, :category, :image, :date, :start_time, :end_time, :comment, :cheer, :users)
+        params.permit(:id, :name, :location, :category, :image, :date, :start_time, :end_time, :comment, :cheer)
     end
 
     # def set_note

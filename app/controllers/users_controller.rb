@@ -29,9 +29,9 @@ class UsersController < ApplicationController
 
     # PATCH /cleanups/:id
     def update 
-        @user.update(user_params)
-        if @user.valid?
-            render json: @user, status: 200
+        user = User.find_by(id: params[:id])
+        if user.valid?
+            render json: user, status: 200
         else
             render json: { error: user.errors.full_messages }, status: :unprocessable_entity
         end
@@ -39,8 +39,8 @@ class UsersController < ApplicationController
 
     # DELETE /cleanups/:id
     def destroy 
-        @user.id = User.find_by(id: params[:id])
-        @user.destroy
+        user = User.find_by(id: params[:id])
+        user.destroy
         render json: users, status: :no_content
     end
     
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
     # User Params
     def user_params
-        params.permit(:id, :avatar, :username, :password, :age, :catchphrase, :park_badge, :playground_badge, :shoreline_badge, :trail_badge, :earth_steward_badge, :cleanups)
+        params.permit(:id, :avatar, :username, :password, :age, :catchphrase, :park_badge, :playground_badge, :shoreline_badge, :trail_badge, :earth_steward_badge)
     end
 
     # def set_user
