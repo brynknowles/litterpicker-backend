@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2021_02_08_212451) do
     t.string "category"
     t.string "image"
     t.date "date"
-    t.time "start_time"
-    t.time "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.text "comment"
     t.integer "cheer"
     t.datetime "created_at", precision: 6, null: false
