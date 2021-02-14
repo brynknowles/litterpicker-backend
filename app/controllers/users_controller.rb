@@ -30,11 +30,13 @@ class UsersController < ApplicationController
     # PATCH /cleanups/:id
     def update 
         user = User.find_by(id: params[:id])
-        if user.valid?
-            render json: user, status: 200
-        else
-            render json: { error: user.errors.full_messages }, status: :unprocessable_entity
-        end
+        user.update!(user_params)
+        render json: user, status: 200
+        # if user.valid?
+        #     render json: user, status: 200
+        # else
+        #     render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+        # end
     end
 
     # DELETE /cleanups/:id
