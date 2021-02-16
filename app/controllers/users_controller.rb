@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     # GET /users/:id
     def show
         user = User.find_by(id: params[:id])
+        # render json: user, status: 200
         if user
             render json: user, status: 200
         else

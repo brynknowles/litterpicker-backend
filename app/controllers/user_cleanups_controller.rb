@@ -27,12 +27,12 @@ class UserCleanupsController < ApplicationController
     def destroy 
         user_cleanup = UserCleanup.find_by(id: params[:id])
         user_cleanup.destroy
-        render json: user_cleanups, status: :no_content
+        render json: user_cleanup, status: :no_content
     end
 
     private
 
     def user_cleanup_params
-        params.permit(:user_id, :cleanup_id)
+        params.permit(:id, :user_id, :cleanup_id)
     end
 end
