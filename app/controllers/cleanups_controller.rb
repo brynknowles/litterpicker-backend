@@ -54,7 +54,7 @@ class CleanupsController < ApplicationController
         params.permit(:id, :name, :location, :category, :image, :date, :start_time, :end_time, :comment, :cheer)
     end
 
-    # def set_note
-    #     @note = Note.find(params[:id])
+    # def set_cleanup
+    #     @cleanup = Cleanup.find(params[:id])
     # end
 end

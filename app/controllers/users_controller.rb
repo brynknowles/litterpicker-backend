@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         end
     end
 
-    # POST /cleanups
+    # POST /users
     def create 
         user = User.create(user_params)
         if user.valid?
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
         end
     end
 
-    # PATCH /cleanups/:id
+    # PATCH /users/:id
     def update 
         user = User.find_by(id: params[:id])
         user.update!(user_params)
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
         # end
     end
 
-    # DELETE /cleanups/:id
+    # DELETE /users/:id
     def destroy 
         user = User.find_by(id: params[:id])
         user.destroy
