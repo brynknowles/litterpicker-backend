@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     def destroy 
         user = User.find_by(id: params[:id])
         user.destroy
-        render json: users, status: :no_content
+        # render json: users, status: :no_content
     end
     
     private
